@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Image } from "react-feather"
-import Thread from '../components/Thread'
-import { database, DEV_DB_ID, COLLECTION_ID_THREADS } from '../appwriteConfig'
+import Thread from '../../components/Thread'
+import { database, DEV_DB_ID, COLLECTION_ID_THREADS } from '../../appwriteConfig'
 import { Query, ID } from 'appwrite'
 
 
@@ -28,12 +28,12 @@ const Feed = () => {
 
     const handleTreadSubmit = async (e) => {
         e.preventDefault()
-        
+
         const payload = {
-            "owner_id":"64eb40c0326e00af18f6",
+            "owner_id": "64eb40c0326e00af18f6",
             "body": threadBody,
             "image": threadImg,
-            
+
         }
 
         const response = await database.createDocument(
@@ -58,7 +58,7 @@ const Feed = () => {
                         }} ></textarea>
                     <div className='flex justify-between p-1'>
                         <Image className=' cursor-pointer' size={30} />
-                        <input className= ' cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' type="submit" value="Post" />
+                        <input className=' cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' type="submit" value="Post" />
                     </div>
                 </form>
             </div>
